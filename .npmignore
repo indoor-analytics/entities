@@ -1,3 +1,4 @@
+*.ts
 .idea
 node_modules
-*.js
+tsconfig.json

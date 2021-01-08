@@ -1,6 +1,4 @@
-import {AxiosResponse} from "axios";
-import {Feature, Polygon} from "@turf/helpers";
-import {polygon} from "@turf/helpers";
+import {Feature, Polygon} from "@turf/helpers/lib/geojson";
 
 /**
  * Represents a physical place, to which are associated reference paths.
@@ -16,25 +14,35 @@ export default class Place {
     geometry: Feature<Polygon>;
     center: {lng: number, lat: number};
 
-    constructor (values: PlaceParameters) {
-        this.id = values.id;
-        this.name = values.name;
-        this.description = values.description;
-        this.address = values.address;
-        this.venueId = values.venueId;
-        this.indoorLocationApiKeys = values.indoorLocationApiKeys;
-        this.geometry = values.geometry;
-        this.center = values.center;
+    constructor (
+        id: number,
+        name: string,
+        description: string,
+        address: string,
+        venueId: string,
+        indoorLocationApiKeys: {[keyId: string]: string},
+        geometry: Feature<Polygon>,
+        center: {lng: number, lat: number}) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.address = address;
+        this.venueId = venueId;
+        this.indoorLocationApiKeys = indoorLocationApiKeys;
+        this.geometry = geometry;
+        this.center = center;
     }
-}
 
-export interface PlaceParameters {
-    id: number;
-    name: string;
-    description: string;
-    address: string;
-    venueId: string;
-    indoorLocationApiKeys: {[keyId: string]: string};
-    geometry: Feature<Polygon>;
-    center: {lng: number, lat: number};
+    public static fromSensorThings (body: any): Place {
+        return new Place(
+            body['@iot.id'],
+            body['name'],
+            body['description'],
+            body['address'],
+            body['unitOfMeasurement']['definition'],
+            {},
+            body['observedArea'],
+            {lat: 0, lng: 0}
+        )
+    }
 }
