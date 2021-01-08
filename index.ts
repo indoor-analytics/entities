@@ -1,4 +1,5 @@
 import {Feature, Polygon} from "@turf/helpers/lib/geojson";
+import {polygon} from "@turf/helpers";
 
 /**
  * Represents a physical place, to which are associated reference paths.
@@ -43,6 +44,19 @@ export default class Place {
             {},
             body['observedArea'],
             {lat: 0, lng: 0}
-        )
+        );
+    }
+
+    public static fromAPI (body: any): Place {
+        return new Place(
+            body['id'],
+            body['name'],
+            body['description'],
+            '',
+            body['venueId'],
+            {},
+            polygon([]),
+            {lng: 0, lat: 0}
+        );
     }
 }
