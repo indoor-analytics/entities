@@ -16,14 +16,25 @@ export default class Place {
     geometry: Feature<Polygon>;
     center: {lng: number, lat: number};
 
-    constructor (rawData: AxiosResponse['data']) {
-        this.id = rawData['id'];
-        this.name = rawData['name'];
-        this.description = rawData['description'];
-        this.address = '';
-        this.venueId = rawData['venueId'];
-        this.indoorLocationApiKeys = {};
-        this.geometry = polygon([]);
-        this.center = {lng: 0, lat: 0};
+    constructor (values: PlaceParameters) {
+        this.id = values.id;
+        this.name = values.name;
+        this.description = values.description;
+        this.address = values.address;
+        this.venueId = values.venueId;
+        this.indoorLocationApiKeys = values.indoorLocationApiKeys;
+        this.geometry = values.geometry;
+        this.center = values.center;
     }
+}
+
+export interface PlaceParameters {
+    id: number;
+    name: string;
+    description: string;
+    address: string;
+    venueId: string;
+    indoorLocationApiKeys: {[keyId: string]: string};
+    geometry: Feature<Polygon>;
+    center: {lng: number, lat: number};
 }
