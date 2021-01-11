@@ -39,11 +39,11 @@ export default class Place {
             body['@iot.id'],
             body['name'],
             body['description'],
-            body['address'],
+            body['Thing']['description'],
             body['unitOfMeasurement']['definition'],
-            {},
+            body['Thing']['properties']['indoorLocationApiKeys'],
             body['observedArea'],
-            {lat: 0, lng: 0}
+            body['Thing']['properties']['center'],
         );
     }
 

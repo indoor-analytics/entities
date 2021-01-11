@@ -24,4 +24,5 @@ export default class Place {
         lat: number;
     });
     static fromSensorThings(body: any): Place;
+    static fromAPI(body: any): Place;
 }
