@@ -52,11 +52,11 @@ export default class Place {
             body['id'],
             body['name'],
             body['description'],
-            '',
+            body['address'],
             body['venueId'],
-            {},
-            polygon([]),
-            {lng: 0, lat: 0}
+            body['indoorLocationApiKeys'],
+            body['geometry'],
+            body['center']
         );
     }
 }
