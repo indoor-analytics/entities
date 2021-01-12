@@ -7,6 +7,7 @@ The aim of this npm package is to gather code shared by both frontend and backen
 * Place
 * ErrorVector
 * IGeoJSONPoint
+* Path
 
 ## Installation
 
