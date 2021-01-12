@@ -6,13 +6,14 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "npx tsc",
-    "prepare" : "npm run build",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@turf/helpers": "^6.1.4",
+    "@turf/length": "^6.0.2",
     "axios": "^0.21.1"
   },
   "devDependencies": {
