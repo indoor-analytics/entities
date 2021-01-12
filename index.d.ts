@@ -41,3 +41,20 @@ export declare class ErrorVector {
     constructor(index: number, acquiredPoint: number[], projectedPoint: number[], distance: number, projectedDistance: number);
     static fromAPI(raw: any): ErrorVector;
 }
+export interface IGeoJSONPoint {
+    type: 'Feature';
+    geometry: {
+        type: 'Point';
+        coordinates: number[];
+    };
+    properties: {
+        id: string;
+        reference: string;
+        position: number;
+        floor: number;
+        color?: string;
+        displayAverageError?: boolean;
+        averageErrorColor?: string;
+        time?: string;
+    };
+}
