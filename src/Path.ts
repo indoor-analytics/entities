@@ -23,8 +23,9 @@ export default class Path {
         this.isReferencePath = isReferencePath;
         this.colorCode = colorCode;
         this.distance =
-            +(length(this.toLineString()) * 1000) // converting distance to metres
-                .toFixed(3);
+            points.length > 1 ?
+                +(length(this.toLineString()) * 1000) : // converting distance to metres
+                0;
         try {
             this.runs = runs
         } catch (e) {
