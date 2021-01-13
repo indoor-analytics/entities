@@ -3,7 +3,7 @@ import { Feature, LineString, Polygon } from "@turf/helpers/lib/geojson";
  * Represents a physical place, to which are associated reference paths.
  * The VenueId links it to the Mapwize place entity.
  */
-export default class Place {
+export declare class Place {
     id: number;
     name: string;
     description: string;
