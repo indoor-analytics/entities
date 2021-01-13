@@ -45,6 +45,8 @@ export default class Path {
      * Returns the current object as a GeoJSON LineString object.
      */
     toLineString (): Feature<LineString> {
+        if (this.points.length <= 1)
+            throw new RangeError("A LineString must contain at least two positions.");
         return lineString(this.toCoordinates());
     }
 
