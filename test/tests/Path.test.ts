@@ -1,5 +1,5 @@
-import {Path} from "../../index";
 import assert from "assert";
+import Path from "../../src/Path";
 
 describe('Path entity tests', () => {
     it('should create path with no positions', () => {
