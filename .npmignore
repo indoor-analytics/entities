@@ -1,4 +1,8 @@
-index.ts
+# ignore the .ts files
+*.ts
+# include the .d.ts files
+!*.d.ts
+
 .idea
 node_modules
 tsconfig.json
