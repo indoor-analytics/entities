@@ -4,6 +4,5 @@
 !*.d.ts
 
 .idea
-node_modules
 tsconfig.json
 test

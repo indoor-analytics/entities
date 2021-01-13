@@ -1,4 +1,4 @@
-import { Feature, Polygon } from "@turf/helpers/lib/geojson";
+import { Feature, Polygon } from "@turf/helpers";
 /**
  * Represents a physical place, to which are associated reference paths.
  * The VenueId links it to the Mapwize place entity.

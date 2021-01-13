@@ -1,4 +1,4 @@
-import { Feature, LineString } from "@turf/helpers/lib/geojson";
+import { Feature, LineString } from "@turf/helpers";
 import IGeoJSONPoint from "./IGeoJSONPoint";
 /**
  * A set of coordinates representing a movement in space.

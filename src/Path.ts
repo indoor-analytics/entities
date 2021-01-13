@@ -1,6 +1,5 @@
 import length from "@turf/length";
-import {Feature, LineString} from "@turf/helpers/lib/geojson";
-import {lineString} from "@turf/helpers";
+import {Feature, LineString, lineString} from "@turf/helpers";
 import IGeoJSONPoint from "./IGeoJSONPoint";
 
 /**
