@@ -16,5 +16,6 @@ export default interface IGeoJSONPoint {
         displayAverageError?: boolean;
         averageErrorColor?: string;
         time?: string;
+        checkpoint?: any;
     };
 }
