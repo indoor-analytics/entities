@@ -41,7 +41,7 @@ export default class Place {
             body['Thing']['description'],
             body['unitOfMeasurement']['definition'],
             body['Thing']['properties']['indoorLocationApiKeys'],
-            body['observedArea'],
+            body['Thing']['properties']['geometry'],
             body['Thing']['properties']['center'],
         );
     }
