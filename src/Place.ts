@@ -1,4 +1,4 @@
-import {Feature, Polygon} from "@turf/helpers";
+import {Polygon} from "@turf/helpers";
 
 /**
  * Represents a physical place, to which are associated reference paths.
@@ -11,7 +11,7 @@ export default class Place {
     address: string;
     venueId: string;
     indoorLocationApiKeys: {[keyId: string]: string};
-    geometry: Feature<Polygon>;
+    geometry: Polygon;
     center: {lng: number, lat: number};
 
     constructor (
@@ -21,7 +21,7 @@ export default class Place {
         address: string,
         venueId: string,
         indoorLocationApiKeys: {[keyId: string]: string},
-        geometry: Feature<Polygon>,
+        geometry: Polygon,
         center: {lng: number, lat: number}) {
         this.id = id;
         this.name = name;
