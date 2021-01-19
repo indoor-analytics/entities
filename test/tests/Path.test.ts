@@ -15,4 +15,20 @@ describe('Path entity tests', () => {
             RangeError
         );
     });
+
+    it('should produce a clone that is independent from original value', () => {
+        const originalName = "This is the path name";
+        const p = new Path(originalName, []);
+        const clone = p.clone();
+
+        const newName = "New name";
+        clone.name = newName;
+        assert.strictEqual(p.name, originalName);
+        assert.strictEqual(clone.name, newName);
+    });
+
+    it('should have a source id without providing id', () => {
+        const p = new Path("pathname", []);
+        assert.strictEqual(p.getSourceName(), 'path--1-pathname');
+    })
 });
