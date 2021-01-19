@@ -9,14 +9,14 @@ export default interface IGeoJSONPoint {
     };
     properties: {
         id: string;
-        reference: string;
-        position: number;
+        reference: string;                  // belongs to a reference path
+        position: number;                   // order of the point into the path
         floor: number;
 
         color?: string;
         displayAverageError?: boolean;
         averageErrorColor?: string;
-        time?: string;
-        checkpoint?: any;
+        time?: string;                      // date (ISO-8601) when the location is registered by SensorThings
+        checkpoint?: any;                   // matches a reference path checkpoint
     }
 }

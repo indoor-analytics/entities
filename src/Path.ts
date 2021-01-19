@@ -42,6 +42,7 @@ export default class Path {
 
     /**
      * Returns the current object as a GeoJSON LineString object.
+     * Throws an error if the path doesn't contain at least two positions.
      */
     toLineString (): Feature<LineString> {
         if (this.points.length <= 1)
