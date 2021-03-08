@@ -13,8 +13,8 @@ The aim of this npm package is to gather code shared by both frontend and backen
 
 ```shell script
 # setting endpoint for repo
-npm config set @indoor-analytics:registry https://gitlab.inria.fr/api/v4/packages/npm/
+npm config set @indoor-analytics:registry https://npm.pkg.github.com/indoor-analytics
 
-# you'll need a Gitlab personal authentication token
-npm config set '//gitlab.inria.fr/api/v4/packages/npm/:_authToken' "<token>"
+# you'll need a GitHub personal authentication token
+npm config set '//npm.pkg.github.com/:_authToken' "<token>"
 ```
