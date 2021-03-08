@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
+  "repository": "git://github.com/indoor-analytics/entities.git",
   "scripts": {
     "build": "npx tsc",
     "prepare": "npm run build",
