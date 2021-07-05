@@ -6,10 +6,11 @@
  */
 export default class ErrorVector {
     index: number;
+    acquisitionTime: string;
     distance: number;
     projectedDistance: number;
     acquiredPoint: number[];
     projectedPoint: number[];
-    constructor(index: number, acquiredPoint: number[], projectedPoint: number[], distance: number, projectedDistance: number);
+    constructor(index: number, acquiredPoint: number[], projectedPoint: number[], distance: number, projectedDistance: number, time: string);
     static fromAPI(raw: any): ErrorVector;
 }
