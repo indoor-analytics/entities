@@ -13,7 +13,7 @@ export default class ErrorVector {
     public acquiredPoint: number[];     // location reported by the localisation system
     public projectedPoint: number[];    // projection of the acquired location on the reference path
 
-    constructor(index: number, acquiredPoint: number[], projectedPoint: number[], distance: number, projectedDistance: number, time: string) {
+    constructor(index: number, acquiredPoint: number[], projectedPoint: number[], distance: number, projectedDistance: number, time: string = '') {
         this.distance = distance;
         this.index = index;
         this.acquiredPoint = acquiredPoint;
