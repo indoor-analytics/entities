@@ -14,8 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@turf/helpers": "^6.1.4",
-    "@turf/length": "^6.0.2",
-    "axios": "^0.21.1"
+    "@turf/length": "^6.0.2"
   },
   "devDependencies": {
     "@types/mocha": "^8.2.0",
