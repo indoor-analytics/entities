@@ -1,6 +1,8 @@
 import ErrorVector from "./src/ErrorVector";
-import IGeoJSONPoint from "./src/old/IGeoJSONPoint";
-import Path from "./src/old/Path";
-import Place from "./src/old/Place";
+import Location from "./src/Location";
+import Place from "./src/Place";
+import ReferencePath from "./src/ReferencePath";
+import Run from "./src/Run";
 
-export {ErrorVector, IGeoJSONPoint, Path, Place};
+// export {ErrorVector, IGeoJSONPoint, Path, Place};
+export {ErrorVector, Location, Place, ReferencePath, Run};
