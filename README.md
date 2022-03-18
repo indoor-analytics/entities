@@ -4,10 +4,12 @@ The aim of this npm package is to gather code shared by both frontend and backen
 
 ## Entities
 
-* Place
 * ErrorVector
-* IGeoJSONPoint
-* Path
+* Location
+* Place
+* ReferencePath
+* Run
+* Sensor
 
 ## Installation
 
