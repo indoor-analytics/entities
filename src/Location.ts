@@ -1,4 +1,5 @@
 import {Point} from "@turf/helpers";
+import Sensor from "./Sensor";
 
 export default class Location {
     // Database id.
@@ -14,7 +15,7 @@ export default class Location {
     timestamp: Date;
 
     // Id of the system that provided this location.
-    source: number;
+    source: Sensor;
 
     // Floor information.
     floor: number;
