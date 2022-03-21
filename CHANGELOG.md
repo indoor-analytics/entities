@@ -1,3 +1,8 @@
+# 1.0.0-rc.2
+
+* ReferencePath holds a collection of Point as path
+* ReferencePath has utility methods
+
 # 1.0.0-rc.1
 
 * New Sensor entity
