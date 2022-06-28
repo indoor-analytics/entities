@@ -1,28 +1,13 @@
-import { Polygon } from "@turf/helpers";
-/**
- * Represents a physical place, to which are associated reference paths.
- * The VenueId links it to the Mapwize place entity.
- */
+import { Point, Polygon } from "@turf/helpers";
 export default class Place {
-    id: number;
+    venue_id: string;
     name: string;
     description: string;
     address: string;
-    venueId: string;
-    indoorLocationApiKeys: {
-        [keyId: string]: string;
-    };
     geometry: Polygon;
-    center: {
-        lng: number;
-        lat: number;
-    };
-    constructor(id: number, name: string, description: string, address: string, venueId: string, indoorLocationApiKeys: {
-        [keyId: string]: string;
-    }, geometry: Polygon, center: {
-        lng: number;
-        lat: number;
-    });
-    static fromSensorThings(body: any): Place;
-    static fromAPI(body: any): Place;
+    center: Point;
+    ips_keys: JSON;
+    private constructor();
+    static fromAPI(data: any): Place;
+    static fromDatabase(data: any): Place;
 }

@@ -1,61 +1,45 @@
-import {Polygon} from "@turf/helpers";
+import {Point, Polygon} from "@turf/helpers";
 
-/**
- * Represents a physical place, to which are associated reference paths.
- * The VenueId links it to the Mapwize place entity.
- */
 export default class Place {
-    id: number;
+    // Mapwize identifier of the place.
+    venue_id: string;
+
+    // Name of the place.
     name: string;
+
+    // Description of the place.
     description: string;
+
+    // Address of the place.
     address: string;
-    venueId: string;
-    indoorLocationApiKeys: {[keyId: string]: string};
+
+    // Geometry of the place.
     geometry: Polygon;
-    center: {lng: number, lat: number};
 
-    constructor (
-        id: number,
-        name: string,
-        description: string,
-        address: string,
-        venueId: string,
-        indoorLocationApiKeys: {[keyId: string]: string},
-        geometry: Polygon,
-        center: {lng: number, lat: number}) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.address = address;
-        this.venueId = venueId;
-        this.indoorLocationApiKeys = indoorLocationApiKeys;
-        this.geometry = geometry;
-        this.center = center;
+    // Center of the place.
+    center: Point;
+
+    // Object holding indoor-positioning-systems access keys.
+    ips_keys: JSON;
+
+
+    private constructor (data: any) {
+        this.venue_id = data.venue_id;
+        this.name = data.name;
+        this.description = data.description;
+        this.address = data.address;
+        this.ips_keys = data.ips_keys;
+        this.geometry = data.geometry;
+        this.center = data.center;
     }
 
-    public static fromSensorThings (body: any): Place {
-        return new Place(
-            body['@iot.id'],
-            body['name'],
-            body['description'],
-            body['Thing']['description'],
-            body['unitOfMeasurement']['definition'],
-            body['Thing']['properties']['indoorLocationApiKeys'],
-            body['Thing']['properties']['geometry'],
-            body['Thing']['properties']['center'],
-        );
+    public static fromAPI(data: any): Place {
+        return new Place(data);
     }
 
-    public static fromAPI (body: any): Place {
-        return new Place(
-            body['id'],
-            body['name'],
-            body['description'],
-            body['address'],
-            body['venueId'],
-            body['indoorLocationApiKeys'],
-            body['geometry'],
-            body['center']
-        );
+    public static fromDatabase(data: any): Place {
+        data.geometry = JSON.parse(data.geometry);
+        data.center = JSON.parse(data.center);
+        return new Place(data);
     }
 }
