@@ -5,6 +5,7 @@ export default class ReferencePath {
     path: FeatureCollection<Point, {
         floor: number;
     }>;
+    indications: string[];
     private constructor();
     static fromDatabase(data: any): ReferencePath;
     static fromAPI(data: any): ReferencePath;

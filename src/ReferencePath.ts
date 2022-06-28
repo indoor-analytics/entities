@@ -10,11 +10,15 @@ export default class ReferencePath {
     // Geometry of the reference path.
     path: FeatureCollection<Point, {floor: number}>;
 
+    // Indications for people walking along path.
+    indications: string[];
+
 
     private constructor( data: any ) {
         this.id = data.id;
         this.name = data.name;
         this.path = data.path;
+        this.indications = data.indications;
     }
 
     public static fromDatabase(data: any): ReferencePath {
